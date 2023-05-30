@@ -1,0 +1,94 @@
+CREATE TABLE empleados
+(
+	id_empleado int PRIMARY KEY,
+	nombre text,
+	direccion text,
+	telefono bigint,
+	edad int,
+	id_sucursal int,
+	correo_electronico text,
+	contrasena text,
+	CONSTRAINT fk_sucursal FOREIGN KEY (id_sucursal) REFERENCES sucursales (id_sucursal)
+
+
+);
+
+
+CREATE TABLE sucursales
+(
+	id_sucursal int PRIMARY KEY,
+	nombre text,
+	nombre_encargado text,
+	direccion text,
+	telefono bigint,
+	ciudad text,
+	estado text
+
+);
+
+
+ALTER TABLE factura
+ADD  id_empleado  INT NULL ;
+
+ALTER TABLE factura ADD CONSTRAINT fk_empleado FOREIGN KEY (id_empleado) REFERENCES empleados (id_empleado);
+
+INSERT INTO empleados VALUES(1,'Sonia Alejandra Fernandez Moreno','Calle Bacurimi #350 Fracc. Las Rosas',4447836545,40,1,'sonia.fernandez@gmail.com','159103');
+INSERT INTO empleados VALUES(2,'Jazmin Guadalupe Rubio Rivas','Av. Constituyente #267 Col. centro',4447252585,25,1,'jazmin.rubio@gmail.com','19516516');
+INSERT INTO empleados VALUES(3,'Brayan Alexander Flores Villa','Calle Tonanzin #4520 Col. Paseo Azteca',44487856,20,1,'brayan.flores@gmail.com','8575965656');
+INSERT INTO empleados VALUES(4,'Jaime Lopez Astorga','Calle Fernando Cuen #8595 Fracc. Terranova',4448796125,22,1,'jaime.astorga@gmail.com','520265892');
+INSERT INTO empleados VALUES(5,'Janeth Gabriela Rivas Blanco','Calle Egipto #754 Fracc. Alexandria',4448897546,24,1,'janeth.rivas@gmail.com','99519519');
+INSERT INTO empleados VALUES(6,'Jose Luis Lizarraga Cabrera','Calle Lucio Blanco #6969 Fracc. Puerta del Sol',4447896547,26,1,'jose.lizarraga@gmail.com','698161');
+INSERT INTO empleados VALUES(7,'Fernando Calderon Ayala','Calle Rio #350 Fracc. Aqua',4445657584,35,2,'fernando.calderon@gmail.com','159103');
+INSERT INTO empleados VALUES(8,'Hector Yoshiel Sotelo Rivas','Av. Masiaf #7854 Fracc. Infonavit Barrancos',4475489614,28,2,'hector.sotelo@gmail.com','159103');
+INSERT INTO empleados VALUES(9,'Victor Manuel Contreras Mejia','Calle Tauro #5585 Fracc. Constelacion',4452845859,32,2,'victor.contreras@gmail.com','5616862aohaos');
+INSERT INTO empleados VALUES(10,'Walter Llamas Sainz','Av. Las Torres #758 Col. Villaverde',4442358469,29,2,'walter.llamas@gmail.com','859678PoHj');
+INSERT INTO empleados VALUES(11,'Adrian Diaz','Calle General Pietro #896 Fracc. La condeja',96178165161,25,2,'adrian.diaz@gmail.com','5621985');
+INSERT INTO empleados VALUES(12,'Saide Garcia Ornelas','Calle Municipalismo #854 Col. Alturas',9511627896,20,2,'saide.garcia@gmail.com','PLE92824');
+INSERT INTO empleados VALUES(13,'Daniela Fernanda Diaz Ordaz','Calle Rio Ometepec #736 Col. Insurgentes',3949826789,32,3,'daniela.diaz@gmail.com','5863PHQS');
+INSERT INTO empleados VALUES(14,'Alejandra Judith Garcia Ornelas','Calle Gardernia #678 Col. Solidaridad',465121979815,32,3,'alejandra.garcia@gmail.com','9519427');
+INSERT INTO empleados VALUES(15,'Omar Vinicio Leal Rivas','Av.Santiago ',6678166545,32,3,'omar.leal@gmail.com','6127210195');
+INSERT INTO empleados VALUES(16,'Manuel Alberto Sotelo Rivas','Calle. Manual Sarabia Fracc. Valle Alto',2545859678,28,3,'manuel.sotelo@gmail.com','95275151');
+INSERT INTO empleados VALUES(17,'Alejandra Olivas','Calle. Rio Sanalona #342 Fracc. Guadalupe',7545859632,24,3,'alejandra.olivas@gmail.com','8656461');
+INSERT INTO empleados VALUES(18,'Manuel Uzueta Gil','Calle Paseo de los Ceresos #824 Fracc. Country Alamos',5485786352,23,3,'manuel.uzueta@gmail.com','97956451');
+INSERT INTO empleados VALUES(19,'Mario Alberto Jimenez Salcido','Calle. Andromeda #546 Col. Nueva Galaxia',8594652563,26,4,'956468218','KENJ56454');
+INSERT INTO empleados VALUES(20,'Jose Antonio Calderon Gomez','Blvd. Emiliano Zapata #258 Col. Jorge Almada',635452285,35,4,'jose.calderon@gmail.com','8596OSN5525');
+INSERT INTO empleados VALUES(21,'Maribel Abigail Sotelo Rivas','Calle Paseo de Cadiz #8554',9654875236,27,4,'maribel.sotelo@gmail.com','HRNJ9123');
+INSERT INTO empleados VALUES(22,'Blas Rivas Blanco','Calle Moras #095 Fracc. Arboledas',5245687595,31,4,'blas.rivas@gmail.com','645738565');
+INSERT INTO empleados VALUES(23,'Hector Lizarraga','Calle San Anselmo #234 Fracc. La Presa',8545256358,45,4,'hector.lizarraga@gmail.com','6854635');
+INSERT INTO empleados VALUES(24,'Pedro Hernandez','Calle San Agustin #854 Fracc. El Santo',8454856595,22,4,'pedro.hernandez@gmail.com','SDRF9628');
+INSERT INTO empleados VALUES(25,'Yesenia Guadalupe Campos Rojo','Calle Naranjo #754 Fracc. Hacienda del Valle',8452567895,28,5,'yesenia.campos@gmail.com','95796412');
+INSERT INTO empleados VALUES(26,'Kevin Cazares','Calle Jade #859 Fracc. Villa Fontana',2252456585,26,5,'kevin.cazares@gmail.com','96582248');
+INSERT INTO empleados VALUES(27,'Miguel Gastelum','Calle Marroqui #885 Fracc. Villa Bonita',2452639878,32,5,'miguel.gastelum@gmail.com','SLFASJ946');
+INSERT INTO empleados VALUES(28,'Michell Rodriguez','Calle Mariano Paredes #948 Fracc. Nuevo Mexico',7858456395,25,5,'michell.rodriguez@gmail.com','MEJDA9584');
+INSERT INTO empleados VALUES(29,'Enrique Buendia','Calle De Las Dalias #824 Fracc. Colinas del Bosque',2575964857,37,5,'enrique.buendia@gmail.com','QNDHF9951');
+INSERT INTO empleados VALUES(30,'Alejandro Leal Ramos','Calle Rio Sena #985 Fracc. Lomas del Boulevard',9658754797,35,5,'alejandro.leal@gmail.com','96857855');
+INSERT INTO empleados VALUES(31,'Tamara Alejandra Bernal Ramos','Calle Rio Lerma #875 Fracc. Industrial Bravo',6585987858,32,6,'tamara.bernal@gmail.com','25849561');
+INSERT INTO empleados VALUES(32,'Josuel Leal Ramos','Calle Rio Quelite #857 Fracc. Guadalupe',9878253695,40,6,'josue.leal@gmail.com','9685748');
+INSERT INTO empleados VALUES(33,'Raul Fragoso','Calle Golfo de California #253 Col. Nuevo Culiacan',9647981235,25,6,'raul.fragoso@gmail.com','95825665');
+INSERT INTO empleados VALUES(34,'Carlos Gutierrez','Calle Cruz Medina #957 Fracc. Pemex',7895256345,40,6,'carlos.gutierrez@gmail.com','968978554');
+INSERT INTO empleados VALUES(35,'Manuel Soto','Calle Cerro de la Silla #365 Fracc. Colinas de San Miguel',6848569878,34,6,'manuel.soto@gmail.com','OQWHER211815');
+INSERT INTO empleados VALUES(36,'Pedro Castro','Calle Nakayama #342 Fracc. Nakayama',8578954578,28,6,'pedro.castro@gmail.com','9628857');
+INSERT INTO empleados VALUES(37,'Samuel Enrique Barrios Enciso','Calle Olmecas #859 Col. Industrial El Palmito',6685987895,37,7,'samuel.barrios@gmail.com','968741951');
+INSERT INTO empleados VALUES(38,'Angel Sebastian Camacho Saucedo','Calle Angel del Campo #358 Col. Felipe Angeles',2548759648,22,7,'angel.camacho@gmail.com','254981564');
+INSERT INTO empleados VALUES(39,'Luis Ernesto Cuen Felix','Calle Adolfo de la Huerta #322 Col. Lazaro Cardenas',6554859625,37,7,'luis.cuen@gmail.com','KMRD62821849');
+INSERT INTO empleados VALUES(40,'Adriana Garcia Ornelas','Calle Costas del Sol #7894 Fracc. El Ranchito',8595785254,28,7,'adriana.garcia@gmail.com','698557928');
+INSERT INTO empleados VALUES(41,'Leon Ayon','Av. Villa Union Fracc. Las Primaveras',4929648578,40,7,'sonia.fernan@gmail.com','518181');
+INSERT INTO empleados VALUES(42,'Jose Adrian Avena Miltre','Calle Articulo 224 #137 Fracc. La Constitucion',4925468597,24,7,'jose.avena@gmail.com','PrjU2149815');
+
+
+
+INSERT INTO sucursales VALUES(1,'Akira’s Boutique: Las Mercedes', 'Sonia Alejandra Fernandez Moreno','Calle Roble #507 Fracc. Las Mercedes',4447831225,'San Luis Potosi', 'San Luis Potosi');
+INSERT INTO sucursales VALUES(2,'Akira’s Boutique: Obraje', 'Fernando Calderon Ayala','Calle Dr.Jesus Diaz de Leon #438 col.Obraje',4493780921,'Aguascalientes', 'Aguascalientes');
+INSERT INTO sucursales VALUES(3,'Akira’s Boutique: Galerias Mazatlan', 'Daniela Fernanda Diaz Ordaz','Av. de la Marina #6204, Marina, local 35',6692932059,'Mazatlan', 'Sinaloa');
+INSERT INTO sucursales VALUES(4,'Akira’s Boutique: Zapopan', 'Mario Alberto Jimenez Salcido','Av. Manuel J. Clouthier 525 col.Benito Juarez',3337841230,'Zapopan', 'Jalisco');
+INSERT INTO sucursales VALUES(5,'Akira’s Boutique: Melchor', 'Yesenia Guadalupe Campos Rojo','Av. Melchor Ocampo #2528 Zona Centro',6143906721,'Chihuahua', 'Chihuahua');
+INSERT INTO sucursales VALUES(6,'Akira’s Boutique: Constitucion', 'Tamara Alejandra Bernal Ramos','Calle Constitucion #106 Zona Centro',6181962954,'Durango', 'Durango');
+INSERT INTO sucursales VALUES(7,'Akira’s Boutique: Centro', 'Samuel Enrique Barrios Enciso','Av. Hidalgo #338 Zacatecas Centro',4929301250,'Zacatecas', 'Zacatecas');
+
+SELECT * FROM empleados 
+
+SELECT * FROM empleados WHERE id_sucursal = 6
+
+SELECT * FROM sucursales 
+
+SELECT * FROM sucursales  WHERE CONVERT(varchar,estado) = 'Sinaloa'
