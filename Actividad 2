@@ -1,0 +1,73 @@
+SELECT c.* FROM cliente AS c JOIN factura AS f ON c.id_cliente = f.id_cliente WHERE  CONVERT(DATE, f.fecha) BETWEEN '2021-01-01' AND '2021-12-31'
+
+SELECT c.* FROM cliente AS c JOIN factura AS f ON c.id_cliente = f.id_cliente WHERE  CONVERT(DATE, f.fecha) > '2022-01-01' 
+
+SELECT * FROM cliente WHERE CONVERT(varchar, nombre) = 'Valentina Anastasia' 
+
+SELECT c.* FROM cliente AS c JOIN factura AS f ON c.id_cliente = f.id_cliente WHERE  CONVERT(varchar, nombre) = 'Valentina Anastasia'
+
+SELECT c.*,f.fecha, d.cantidad,d.precio,p.nombre FROM cliente AS c 
+JOIN factura AS f 
+ON c.id_cliente = f.id_cliente 
+JOIN detalle AS d 
+ON f.id_detalle = d.id_detalle 
+JOIN producto AS p 
+ON p.id_producto = d.id_producto
+WHERE  CONVERT(varchar, c.nombre) = 'Valentina Anastasia'
+
+SELECT c.*,f.fecha, d.cantidad,d.precio,p.nombre FROM cliente AS c 
+JOIN factura AS f 
+ON c.id_cliente = f.id_cliente 
+JOIN detalle AS d 
+ON f.id_detalle = d.id_detalle 
+JOIN producto AS p 
+ON p.id_producto = d.id_producto
+WHERE  CONVERT(varchar, c.nombre) = 'Zayra Manuela'
+
+SELECT c.*,f.fecha, d.cantidad,d.precio,p.nombre FROM cliente AS c 
+JOIN factura AS f 
+ON c.id_cliente = f.id_cliente 
+JOIN detalle AS d 
+ON f.id_detalle = d.id_detalle 
+JOIN producto AS p 
+ON p.id_producto = d.id_producto
+WHERE  CONVERT(varchar, c.nombre) = 'Dante Eduardo'
+
+SELECT c.*,f.fecha, d.cantidad,d.precio,p.nombre FROM cliente AS c 
+JOIN factura AS f 
+ON c.id_cliente = f.id_cliente 
+JOIN detalle AS d 
+ON f.id_detalle = d.id_detalle 
+JOIN producto AS p 
+ON p.id_producto = d.id_producto
+WHERE  CONVERT(varchar, c.nombre) = 'Ana Maribel'
+
+SELECT c.*,f.fecha, d.cantidad,d.precio,p.nombre FROM cliente AS c 
+JOIN factura AS f 
+ON c.id_cliente = f.id_cliente 
+JOIN detalle AS d 
+ON f.id_detalle = d.id_detalle 
+JOIN producto AS p 
+ON p.id_producto = d.id_producto
+WHERE  CONVERT(varchar, c.nombre) = 'Rodrigo Ismael'
+
+
+SELECT p.nombre, d.cantidad
+FROM detalle AS d
+JOIN producto AS p ON d.id_producto = p.id_producto
+WHERE d.cantidad = (
+  SELECT MAX(cantidad)
+  FROM detalle
+)
+
+SELECT * FROM factura ORDER BY fecha
+
+
+SELECT * FROM cliente ORDER BY CAST(nombre AS varchar);
+
+
+SELECT c.nombre,p.nombre FROM producto AS p JOIN categoria AS c ON p.id_categoria =c.id_categoria
+
+SELECT e.* FROM empleados AS e JOIN sucursales AS s ON e.id_sucursal = s.id_sucursal WHERE CONVERT(varchar, s.nombre) = 'Akira’s Boutique: Constitucion'
+
+SELECT * FROM cliente WHERE DATEDIFF(YEAR, fec_nac, GETDATE()) > 30 ;
